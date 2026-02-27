@@ -3,12 +3,18 @@ const app = express();
 const mongoose = require('mongoose');
 const ShortUrl = require('./models/shortUrls');
 const shortUrl = require('./models/shortUrls');
+const url='mongodb+srv://kelvinmuemah855:kelvinmuemah855@cluster0.wzdrk.mongodb.net/Patient_sys'
+// const url_local='mongodb://localhost/urlShortener'
 
-mongoose.connect('mongodb://localhost/urlShortener');
-
-
+// mongoose.connect('mongodb://localhost/urlShortener');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
+
+// Connect to MongoDB Atlas
+mongoose.connect(url)
+  .then(() => console.log('Connected to MongoDB Atlas Successfully!'))
+  .catch(err => console.error('DB connection error:', err));   
+  console.log("MongoDB Atlas uri: ", url);
 
 app.get('/', async(req, res) => {
    const shortUrls = await shortUrl.find();
