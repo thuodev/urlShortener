@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const ShortUrl = require('./models/shortUrls');
 const shortUrl = require('./models/shortUrls');
-const url='mongodb+srv://kvin5@cluster0.wzdrk.mongodb.net/Patient_sys'
+const url='mongodb+srv://thuo11@cluster0.wzdrk.mongodb.net/urlShortener'
 // const url_local='mongodb://localhost/urlShortener'
 
 // mongoose.connect('mongodb://localhost/urlShortener');
